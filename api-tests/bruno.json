@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "glvd-api-tests",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
