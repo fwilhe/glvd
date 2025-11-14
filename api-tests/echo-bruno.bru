@@ -9,3 +9,9 @@ get {
   body: json
   auth: none
 }
+
+tests {
+  test("should be able to get start page", function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+}
