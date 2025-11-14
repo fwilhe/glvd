@@ -1,0 +1,18 @@
+name: CI
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v5
+    - name: Compose Up
+      run: |
+        docker compose --file deployment/compose/compose.yaml up --detach
+
+    - run: sleep 60
+    - run: curl http://localhost:8080/v1/cveDetails/CVE-2025-21864
